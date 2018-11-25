@@ -35,3 +35,18 @@ const reverseList = (head) => {
   }
   return prev;
 }
+
+
+// recursive approach
+const reverseList = (head) => {
+  if (!head) {
+    return head;
+  }
+  let curr = head;
+  let next = curr.next;
+  curr.next = null;
+  let prev = curr;
+  curr = next;
+  prev = reverseList(curr);
+  return prev;
+}
